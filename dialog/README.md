@@ -61,6 +61,6 @@ new $.wz.Dialog({
 4.倒计时关闭弹窗
 ```javascript
 new $.wz.Dialog({
-	countdown : true
+	countdown : 5
 })
 ```
