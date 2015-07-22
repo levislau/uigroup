@@ -8,7 +8,7 @@
 
     function Dialog(_default){
         var _defaults = {
-            width:'auto',
+            width:'300',
             height:'auto',
             location : 'center',// center, topleft(lefttop), topright(righttop), bottomleft(leftbottom), bottomright(rightbottom)
             shade : true,       // 是否需要遮罩
@@ -17,8 +17,7 @@
             ease : 'fade',      // 显示和隐藏形式
             title:'提示框',      // 弹窗标题
             content:'内容加载中...',// 弹窗内容
-            countdown:false,    // 是否倒计时关闭
-            times:5             // 若开启倒计时关闭，则默认5秒后关闭
+            countdown:0,        // 倒计时时间，若小于等于0，则表示不开启
         }
         defaults = $.extend(_defaults, _default);
         
@@ -44,7 +43,7 @@
                 this.distance = this.format(html, [
                     defaults.title, 
                     defaults.content, 
-                    (defaults.countdown ? this.format(counthtml, [defaults.times]) : ''), 
+                    (defaults.countdown>0 ? this.format(counthtml, [defaults.countdown]) : ''), 
                     (defaults.btn.length ? this.format(btn, [s]) : '')
                 ]);
             }
@@ -143,8 +142,8 @@
             })
 
             // 倒计时关闭
-            if(defaults.countdown){
-                var times = defaults.times;
+            if(defaults.countdown>0){
+                var times = defaults.countdown;
                 var $em = $('.wz_dialog').find('.countdown em');
                 var self = this;
 
