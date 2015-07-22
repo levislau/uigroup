@@ -18,14 +18,14 @@ jquery的弹窗组件
 }
 ```
 
-1. 在右下角显示弹窗：
+1.在右下角显示弹窗：
 ```javascript
 new $.wz.Dialog({
 	location : 'bottomright' // 或'rightbottom'
 });
 ```
 
-2. 显示确定和取消按钮：
+2.显示确定和取消按钮：
 按钮设置为一个`array`类型，是为了能够实现添加多个按钮的功能
 ```javascript
 new $.wz.Dialog({
@@ -47,7 +47,7 @@ new $.wz.Dialog({
 })
 ```
 
-3. 显示相应的内容
+3.显示相应的内容
 ```
 new $.wz.Dialog({
 	content : 'this dialog is used by wenzi',
@@ -59,7 +59,7 @@ new $.wz.Dialog({
 })
 ```
 
-4. 倒计时关闭弹窗
+4.倒计时关闭弹窗
 ```javascript
 new $.wz.Dialog({
 	countdown : true
