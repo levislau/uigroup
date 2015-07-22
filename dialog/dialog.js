@@ -1,7 +1,7 @@
 ;(function($){
     var shade = '<div class="wz_shade"></div>';
-    var html = '<div class="wz_dialog"><div class="title">{0}</div><a href="javascript:;" class="close">x</a><div class="content">{1}</div><div class="bottom">{2}{3}</div></div>';
-    var btn = '<span class="btn">{0}</span>';
+    var html = '<div class="wz_dialog"><div class="wz_title">{0}</div><a href="javascript:;" class="wz_close">x</a><div class="wz_content">{1}</div><div class="wz_bottom">{2}{3}</div></div>';
+    var btn = '<span class="wz_btn">{0}</span>';
     var counthtml = '<span class="countdown"><em>{0}</em> 秒后关闭</span>';
 
     var defaults = {};
@@ -62,10 +62,10 @@
         // 设定样式
         style : function(){
             var $dialog = $('.wz_dialog');
-            var $content = $dialog.children('.content');
+            var $content = $dialog.children('.wz_content');
 
-            defaults.width = defaults.width==='auto' ? ($dialog.width()+parseFloat($content.css('padding-left'))+parseFloat($content.css('padding-right'))) : defaults.width;
-            defaults.height = defaults.height==='auto' ? ($dialog.height()+parseFloat($content.css('padding-top'))+parseFloat($content.css('padding-bottom'))) : defaults.height;
+            defaults.width = defaults.width==='auto' ? ($content.width()+parseFloat($content.css('padding-left'))+parseFloat($content.css('padding-right'))) : defaults.width;
+            defaults.height = defaults.height==='auto' ? ($content.height()+parseFloat($content.css('padding-top'))+parseFloat($content.css('padding-bottom'))+58) : defaults.height;
 
             $dialog.css({
                 'width' : defaults.width,
@@ -127,7 +127,7 @@
         bind : function(){
             var $dialog = $('.wz_dialog');
             var self = this;
-            $dialog.find('.close').on('click', function(){
+            $dialog.find('.wz_close').on('click', function(){
                 self.close();
             })
             $dialog.find('.btn_a').each(function(index){

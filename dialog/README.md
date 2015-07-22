@@ -64,3 +64,74 @@ new $.wz.Dialog({
 	countdown : 5
 })
 ```
+
+推荐样式：  
+```css
+.wz_shade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    z-index: 998;
+}
+.wz_dialog{
+    position: fixed;
+    background: #ffffff;
+    width: auto;
+    height: auto;
+    margin-left: 0px;
+    margin-top: 0px;
+    z-index: 999;
+    background-color: #eef;
+    display: none;
+}
+.wz_dialog .wz_title{
+    background: #92A9E0;
+    padding: 10px;
+}
+.wz_dialog .wz_close{
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    right: 8px;
+    top: 9px;
+    background: #fff;
+    text-decoration: none;
+}
+.wz_dialog .wz_close:hover{
+    color: #dd553b;
+}
+.wz_dialog .wz_content{
+    padding: 10px;
+    margin-bottom: 24px;
+}
+.wz_dialog .wz_bottom{
+    padding: 10px;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+}
+.wz_dialog .wz_btn a{
+    text-decoration: none;
+    color: #fff;
+    padding: 4px 8px;
+    background: #92A9E0;
+    margin-left: 6px;
+    -moz-transition-delay: 0.2s; /* Firefox 4 */
+    -webkit-transition-delay: 0.2s; /* Safari 和 Chrome */
+    -o-transition-delay: 0.2s; /* Opera */
+    transition-delay: 0.2s;
+}
+.wz_dialog .wz_btn a:hover{
+    background: #dda669;
+    color: #4A4242;
+}
+```
